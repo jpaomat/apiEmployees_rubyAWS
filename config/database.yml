@@ -1,25 +1,25 @@
+<% load('config/secret-manager.rb') %>
 default: &default
   socket: /var/run/mysqld/mysqld.sock # para obtener esta vriable se ejecuta el comando 'mysql -uroot -p' y 'show variables like 'sokect''
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV["DB_POOL"] || 5  %>
-  database: <%= ENV['RDS_DB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV["RDS_HOSTNAME"]%>
-  port:  <%= ENV["RDS_PORT"]%>
+  database: <%= $rds_db_name %>
+  username: <%= $rds_username %>
+  password: <%= $rds_password %>
+  host: <%= $rds_hostname %>
+  port:  <%= $rds_port %>
   url: <%= ENV['DATABASE_URL'] %> # takes higher precedence than other settings
   reconnect: true
-
 development:
   <<: *default
-  database: <%= ENV['RDS_DB_NAME']%>
+  database: <%= $rds_db_name %>
 
 test:
   <<: *default
-  database: <%= ENV['RDS_DB_NAME']%>
+  database: <%= $rds_db_name %>
 
 production:
   <<: *default
-  database: <%= ENV['RDS_DB_NAME']%>
+  database: <%= $rds_db_name %>
   url: <%= ENV['DATABASE_URL'] %>

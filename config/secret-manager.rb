@@ -52,5 +52,10 @@
       # Your code goes here.
     end
   end
-$secret = JSON.parse(get_secret())
-puts $secret
+secret = JSON.parse(get_secret())
+
+  $rds_db_name = secret['dbInstanceIdentifier']
+  $rds_username = secret['username']
+  $rds_password = secret['password']
+  $rds_hostname = secret['host']
+  $rds_port = secret['port']
