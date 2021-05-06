@@ -22,8 +22,8 @@ Jets.application.configure do
   # config.api.endpoint_type = 'PRIVATE' # Default is 'EDGE' (https://docs.aws.amazon.com/apigateway/api-reference/link-relation/restapi-create/#endpointConfiguration)
 
   # config.function.environment = {
-  #   global_app_key1: "global_app_value1",
-  #   global_app_key2: "global_app_value2",
+    #   global_app_key1: "global_app_value1",
+    #   global_app_key2: "global_app_value2",
   # }
   # More examples:
   # config.function.dead_letter_config = { target_arn: "arn" }
@@ -62,13 +62,7 @@ Jets.application.configure do
   # config.logger = Jets::Logger.new($stderr)
 
   config.controllers.default_protect_from_forgery = false
-  # Jets.application.configure do
-  #   # ...
-  #   config.cors = {
-  #     "access-control-allow-origin" => "*",
-  #     "access-control-allow-credentials" => true,
-  #   }
-  # end
+
   Jets.application.configure do
     # ...
     config.cors = "*"

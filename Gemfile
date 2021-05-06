@@ -7,6 +7,7 @@ gem "jets", "~> 3.0.0"
 # and config/database.yml file if you are not
 gem "mysql2", "~> 0.5.2"
 gem 'rack-cors'
+gem 'aws-sdk', '~> 3'
 
 gem "dynomite"
 
